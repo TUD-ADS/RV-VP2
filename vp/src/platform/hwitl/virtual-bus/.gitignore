@@ -1,0 +1,6 @@
+.cproject
+.project
+.settings/
+*.o
+*-cli
+pipe_*

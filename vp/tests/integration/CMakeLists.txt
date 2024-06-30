@@ -1,0 +1,11 @@
+project(integration-tests)
+cmake_minimum_required(VERSION 3.10.0)
+
+enable_language(C ASM)
+
+file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/*")
+foreach(file ${files})
+	if(EXISTS "${file}/CMakeLists.txt")
+		add_subdirectory(${file})
+	endif()
+endforeach()

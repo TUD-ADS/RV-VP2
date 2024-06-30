@@ -1,0 +1,35 @@
+image: alpine:edge
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - vp/build
+
+default:
+  before_script:
+    - apk update && apk add --no-cache build-base git boost-dev cmake git gdb-multiarch g++-riscv-none-elf gcc-riscv-none-elf newlib-riscv-none-elf valgrind socat
+    - export RISCV_PREFIX=riscv-none-elf-
+
+build-vp:
+  stage: build
+  script:
+    - sh -c 'env MAKEFLAGS=-j$(nproc) make'
+  artifacts:
+    paths:
+      - vp/build/bin
+    expire_in: 24h
+  only:
+    - master
+    - merge_requests
+
+test-vp:
+  stage: test
+  script:
+    - cd vp/build
+    - ctest -V
+  only:
+    - master
+    - merge_requests
