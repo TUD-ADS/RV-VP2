@@ -3,6 +3,8 @@
 # Usage
 The "RV-VP2" platform is implemented based on open source RISC-V based Vitual Prototype (RV-VP) reference [1].
 
+[1] V. Herdt, D. Große, P. Pieper, and R. Drechsler,RISC-V based virtual prototype: An extensible and configurable platform for the system-level, In Journal of Systems Architecture, 2020, (url: https://github.com/agra-uni-bremen/riscv-vp)
+
 #### 1) Build requirements
 
 Mainly the usual build tools and boost is required:
