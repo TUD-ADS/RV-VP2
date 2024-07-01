@@ -1,4 +1,4 @@
-# RV-VP2: RISC-V based Virtual Prototype (VP) with RV32 P-extensions Support
+# RV-VP2: RISC-V based Virtual Prototype (VP) with RV32 P-extension Support
 
 # Usage
 The "RV-VP2" platform is implemented based on open source RISC-V based Vitual Prototype (RV-VP) reference [1].
